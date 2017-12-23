@@ -53,7 +53,9 @@ function test_input($data) {
 }
 
 ?>
-
+<script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
 
     <div class='trademark'>
         <table style="margin-top: 0px;">
@@ -61,8 +63,9 @@ function test_input($data) {
             <?php if( isset($_SESSION['user']) ) { echo "<td colspan = '2' style='text-align: right;'>Welcome ".$_SESSION['name'].", ".$_SESSION['bizname']."</td></tr>"; } ?>
     
             <tr style='margin-top:0px'>
-                <td id='page_name' style="width: 500px; text-align: left; color: #477201;"></td>
-                <td style="width: 200px;"><?php if( $disconnected ) { echo "<a style='border-radius: 10px; color: white; padding-left: 10px; padding-right: 10px; background-color: #477201;' href='https://nauchtan.com/erp/login.php'>Login</a>";} else { echo "<a class='linkbtn' href='https://nauchtan.com/erp/todo.php'>ToDo</a><a class='linkbtn' href='logout.php?logout'>Logout</a>";} ?></td>
+                <td id='page_name' style="width: 500px; max-width: 80%; text-align: left; color: #477201;"></td>
+                <td id='home' style="width: 75px;"><a style="border-radius: 10px; color: white; padding: 0 10px 0 10px; background-color: #477201; margin-right: 10px;" href="flowchart.php">Home</a></td>
+                <td style="width: 75px;"><?php if( $disconnected ) { echo "<a style='border-radius: 10px; color: white; padding: 0px 10px 0px 10px; background-color: #477201;' href='https://nauchtan.com/erp/login.php'>Login</a>";} else { echo "<a class='linkbtn' href='https://nauchtan.com/erp/todo.php'>ToDo</a><a class='linkbtn' href='logout.php?logout'>Logout</a>";} ?></td>
             </tr>
         </table>       
     </div>

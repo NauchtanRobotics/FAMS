@@ -11,7 +11,8 @@
 </script>
 <!-- Insert a name for the page into the heading banner template provided by head_config_heading.php -->
 <script language ="javascript">
-    $('#page_name').html('<h4>Home</h4>')
+    $('#page_name').html('<h4>Home</h4>');
+    $('#home').html('');
 </script>
     
 <div id="container" style="height: 100%;">
@@ -41,7 +42,7 @@
                     <li><br></li>
                     <li><a href="fabricating.php">Parts to Fabricate<?php if ( is_int($numFabJobs) && ($numFabJobs > 0 ) ) echo "&nbsp;<span class='label label-danger'>$numFabJobs</span>";?></a></li>
                     <li><br></li>
-                    <li><a href="assemblytodo.php">Assemble<?php if ( is_int($numProductsToAssemble) && ($numProductsToAssemble > 0 ) ) echo "&nbsp;<span class='label label-danger'>$numProductsToAssemble</span>";?></a></li>                   
+                    <li><a href="assemblytodo.php">Assemble<?php if ( is_int($numProductsToAssemble) && ($numProductsToAssemble > 0 ) ) echo "&nbsp;<span class='label label-info'>$numProductsToAssemble</span>"; if ($numProductsToAssembleThisUser>0) { $label="danger"; echo "&nbsp;<span class='label label-danger'>$numProductsToAssembleThisUser</span>";}?></a></li>                   
                </ul>
             </td>
             <td><img src="arrow3a.png" alt="" height=30 width=30></img></td>

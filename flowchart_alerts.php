@@ -37,6 +37,14 @@ class flowchart_alerts extends forward_production {
         AND c.order_num = b.id 
         AND (a.closed < a.assembly_qty OR a.closed IS NULL) 
         AND b.cancelled = 0';
+        
+    const countProductsForUserToAssembleQuery = 'SELECT c.serial_num  
+        FROM assembly_plan_tbl a, r_ord_id_tbl b, r_ord_detail_tbl c 
+        WHERE a.id = c.serial_num 
+        AND c.order_num = b.id 
+        AND (a.closed < a.assembly_qty OR a.closed IS NULL) 
+        AND b.cancelled = 0
+        AND a.assigned_user LIKE ?';
     
     const countQualityChecksReqQuery = 'SELECT c.id 
         FROM assembly_plan_tbl a, r_ord_id_tbl c 

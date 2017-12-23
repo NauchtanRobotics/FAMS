@@ -14,6 +14,7 @@ if (!$disconnected) {// Execute multiple queries to populate the actions require
     $numFabJobs = $buildInventoryAndProd->countRequired($buildInventoryAndProd::countFabItemsQry);
     $numShoppingItems = $buildInventoryAndProd->countRequired($buildInventoryAndProd::countShoppingItemsQry);
     $numProductsToAssemble = $buildInventoryAndProd->countRequired($buildInventoryAndProd::countProductsToAssembleQuery);
+    $numProductsToAssembleThisUser = $buildInventoryAndProd->countRequiredWFilter($buildInventoryAndProd::countProductsForUserToAssembleQuery, $_SESSION['name']);
     $numQualityChecksReq = $buildInventoryAndProd->countRequired($buildInventoryAndProd::countQualityChecksReqQuery);
     $numProductOrders = $buildInventoryAndProd->countRequired($buildInventoryAndProd::countProductsToPlanQuery);
     $numPackageOrders = $buildInventoryAndProd->countRequired($buildInventoryAndProd::countPackagesToPlanQuery);  

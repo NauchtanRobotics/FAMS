@@ -127,6 +127,21 @@ class forward_production extends inventory {
         return $stmt3->num_rows;
     }
     
+    function countRequiredWFilter($listType, $strVar){
+        if (!$stmt3 = $this->link->prepare($listType) ){
+            die('prepare() 335 failed: ' . htmlspecialchars($this->link->error));  
+        }
+        $rc = $stmt3->bind_param("s", $strVar );           
+        if ( false === $rc ){
+           die('bind() 135 failed: ' . htmlspecialchars($stmt3->error));
+        }
+        $rc3 = $stmt3->execute();    
+        if ( false === $rc3 ){
+            die('execute() 335 failed: ' . htmlspecialchars($stmt3->error)); 
+        }
+        $stmt3->store_result();
+        return $stmt3->num_rows;
+    }
     
     function showList($listType){   
         // Initialise loop variables
